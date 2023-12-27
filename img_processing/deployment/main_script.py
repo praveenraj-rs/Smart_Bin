@@ -3,6 +3,7 @@ from flashlight_control import turn_on_flashlight,turn_off_flashlight
 from image_capture import capture_image
 from image_process import process_captured_image
 from bin_rotate import bin_rotate
+from confirm_rotation import confirm_rotation
 from save_currentPosition import save_position
 from fill_measure import measure_fill_percent
 from lcd_display import lcd_display 
@@ -31,6 +32,9 @@ def on_motion():
 
     # Sending the serial message to rotate the bin
     bin_rotate(predicted_label)
+
+    # Confirming the rotation of bin
+    confirm_rotation()
 
     # Saving the current position of bin to json file
     save_position(predicted_label)
