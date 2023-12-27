@@ -1,4 +1,3 @@
-# image_processing.py
 import numpy as np
 from PIL import Image
 from utils import *
@@ -26,3 +25,4 @@ def process_captured_image(file_path):
     print(" - Predicted waste type: {}".format(predicted_label))
 
     return predicted_label
+

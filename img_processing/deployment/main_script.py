@@ -2,7 +2,8 @@ from gpiozero import MotionSensor
 from flashlight_control import turn_on_flashlight,turn_off_flashlight
 from image_capture import capture_image
 from image_process import process_captured_image
-from serial_esp import send_data_to_esp
+from bin_rotate import bin_rotate
+from save_currentPosition import save_position
 from fill_measure import measure_fill_percent
 from lcd_display import lcd_display 
 
@@ -28,8 +29,11 @@ def on_motion():
      # Call the image processing function
     predicted_label = process_captured_image("captured_image.jpg")
 
-    # Sending the predicted lable to esp for stepper rotation
-    send_data_to_esp(predicted_label)
+    # Sending the serial message to rotate the bin
+    bin_rotate(predicted_label)
+
+    # Saving the current position of bin to json file
+    save_position(predicted_label)
 
     # Measuring the bin fill level and updating it in json file
     measure_fill_percent(predicted_label)
