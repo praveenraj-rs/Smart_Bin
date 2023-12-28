@@ -8,6 +8,9 @@ from save_currentPosition import save_position
 from fill_measure import measure_fill_percent
 from lcd_display import lcd_display 
 
+# Intial Dispay call
+lcd_display()
+
 # GPIO pin for the IR sensor
 IR_SENSOR_PIN = 17
 
