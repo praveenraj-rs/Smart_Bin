@@ -5,7 +5,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 # GPIO pin for the flashlight
-flashlight_pin = 20
+flashlight_pin = 17
 
 # The GPIO pin as an output
 GPIO.setup(flashlight_pin, GPIO.OUT)

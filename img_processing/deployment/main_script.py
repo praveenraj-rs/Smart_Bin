@@ -6,13 +6,14 @@ from bin_rotate import bin_rotate
 from confirm_rotation import confirm_rotation
 from save_currentPosition import save_position
 from fill_measure import measure_fill_percent
+from fill_measure_org import measure_fill_percent_org
 from lcd_display import lcd_display 
 
 # Intial Dispay call
 lcd_display()
 
 # GPIO pin for the IR sensor
-IR_SENSOR_PIN = 17
+IR_SENSOR_PIN = 4
 
 # Initialize the motion sensor
 motion_sensor = MotionSensor(IR_SENSOR_PIN)
@@ -44,6 +45,9 @@ def on_motion():
 
     # Measuring the bin fill level and updating it in json file
     measure_fill_percent(predicted_label)
+
+    # Measuring the organic fill level
+    measure_fill_percent_org()
 
     # Displaying the fill level to LCD from json file
     lcd_display()

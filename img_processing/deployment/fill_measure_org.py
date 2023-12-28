@@ -3,14 +3,15 @@ import time
 import json
 import os
 
-def measure_fill_percent(predicted_label):
+def measure_fill_percent_org():
+    predicted_label=organic
 
     def setup_ultrasonic():
         GPIO.setmode(GPIO.BCM)
 
         # Define GPIO pins
-        TRIG_PIN = 23
-        ECHO_PIN = 24
+        TRIG_PIN = 25
+        ECHO_PIN = 8
 
         # Set TRIG as OUTPUT
         GPIO.setup(TRIG_PIN, GPIO.OUT)
@@ -78,6 +79,6 @@ def measure_fill_percent(predicted_label):
     return updated_json_data
 
 if __name__=="__main__":
-    measure_fill_percent("plastic")
+    measure_fill_percent_org()
     GPIO.cleanup()
 
