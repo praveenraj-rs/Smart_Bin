@@ -47,7 +47,7 @@ def on_motion():
     measure_fill_percent(predicted_label)
 
     # Measuring the organic fill level
-    # measure_fill_percent_org()
+    measure_fill_percent_org()
 
     # Displaying the fill level to LCD from json file
     lcd_display()

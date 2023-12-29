@@ -22,8 +22,8 @@ def lcd_display():
             return {}
 
     fill_percent_data = read_fill_percent_data()
-    lcdDisplay.set(f"PC:{fill_percent_data['plastic']}%,PR:{fill_percent_data['paper']}%",1)
-    lcdDisplay.set(f"OR:{fill_percent_data['other']}%,OC:{fill_percent_data['organic']}%",2)
+    lcdDisplay.set(f"PC:{fill_percent_data['plastic']}%  PR:{fill_percent_data['paper']}%",1)
+    lcdDisplay.set(f"OR:{fill_percent_data['other']}%  OC:{fill_percent_data['organic']}%",2)
     sleep(1)
 
     print(" - Displaying Fill Level Successful")

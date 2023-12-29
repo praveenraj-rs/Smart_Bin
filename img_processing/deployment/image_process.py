@@ -26,3 +26,5 @@ def process_captured_image(file_path):
 
     return predicted_label
 
+if __name__=="__main__":
+    process_captured_image("./captured_image.jpg")
