@@ -4,7 +4,7 @@ import json
 import os
 
 def measure_fill_percent_org():
-    predicted_label=organic
+    predicted_label="organic"
 
     def setup_ultrasonic():
         GPIO.setmode(GPIO.BCM)

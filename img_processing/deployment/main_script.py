@@ -13,7 +13,7 @@ from lcd_display import lcd_display
 lcd_display()
 
 # GPIO pin for the IR sensor
-IR_SENSOR_PIN = 4
+IR_SENSOR_PIN = 26
 
 # Initialize the motion sensor
 motion_sensor = MotionSensor(IR_SENSOR_PIN)
@@ -47,7 +47,7 @@ def on_motion():
     measure_fill_percent(predicted_label)
 
     # Measuring the organic fill level
-    measure_fill_percent_org()
+    # measure_fill_percent_org()
 
     # Displaying the fill level to LCD from json file
     lcd_display()

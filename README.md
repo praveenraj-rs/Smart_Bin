@@ -13,7 +13,7 @@
 
 - VCC pin -- 5V on the RPI.
 - GND pin -- GND on the RPI.
-- OUT pin -- GPIO-4
+- OUT pin -- GPIO-26
 
 #### 3. For flashlight
 
