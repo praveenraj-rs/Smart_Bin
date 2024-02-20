@@ -1,13 +1,13 @@
 #include <Stepper.h>
 
 // For Slider
-const int n = 3;
+const int n = 5;
 const int stepsPerRevolution = 3000;
-Stepper sliderStepper(stepsPerRevolution, D4, D5);
+Stepper sliderStepper(stepsPerRevolution, D6, D7);
 
 // For Rotation
 const int stepsForRotation = 3000;
-Stepper rotateStepper(stepsPerRevolution, D6, D7);
+Stepper rotateStepper(stepsPerRevolution, D4, D5);
 // Stepper rotateStepper(stepsPerRevolution, directionPin, stepPin);
 
 void setup() {
@@ -22,12 +22,14 @@ void loop() {
 
     if (input == "rotate_right") {
       rotateStepper.step(stepsForRotation);
+      delay(100);
       SliderOpenClose();
     } else if (input == "rotate_left") {
     	rotateStepper.step(-stepsForRotation);
+      delay(100);
 	    SliderOpenClose();
     } else if (input == "stay") {
-      // Eat FiveStar, Do nothing (>‿◠)
+	    SliderOpenClose();
     } else {
       Serial.println("Invalid command. Please enter 'rotate_right', 'rotate_left', or 'stay'.");
     }
@@ -38,13 +40,13 @@ void SliderOpenClose()
 {
   for (int i = 0; i < n; i++) {
 	sliderStepper.step(stepsPerRevolution);
-	delay(100);
+	delay(1);
   }
 
   // Rotate three times backward
   for (int i = 0; i < n; i++) {
 	sliderStepper.step(-stepsPerRevolution);
-	delay(100);
+	delay(1);
   }
 
   Serial.println("Waste Moved into Bin");
